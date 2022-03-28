@@ -1,0 +1,3 @@
+while [ true ]; do time curl localhost:5000/query; sleep 1; done
+
+while [ true ]; do time curl localhost:5000/sleep; sleep 1; done
