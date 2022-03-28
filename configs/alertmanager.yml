@@ -17,7 +17,7 @@ receivers:
   email_configs:
   - to: 'cristhian.monasterio@gmail.com'
   slack_configs:
-  - api_url: https://hooks.slack.com/services/T02P3DVJCAW/B02P3EE6YF4/WhTuS5nVLGqdG6jlsIWZgkC
+  - api_url: https://hooks.slack.com/services/***********************
     channel: '#alerts-k8s-1'
     send_resolved: true
 
