@@ -5,3 +5,13 @@ metrics:
   aws_metric_name: HealthyHostCount
   aws_dimensions: [AvailabilityZone, LoadBalancerName]
   aws_statistics: [Average]
+
+- aws_namespace: AWS/ELB
+  aws_metric_name: Latency
+  aws_dimensions: [AvailabilityZone, LoadBalancerName]
+  aws_statistics: [Average]
+
+- aws_namespace: AWS/ELB
+  aws_metric_name: RequestCount
+  aws_dimensions: [AvailabilityZone, LoadBalancerName]
+  aws_statistics: [Average]
