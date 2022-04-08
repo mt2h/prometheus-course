@@ -33,19 +33,15 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9100']
 
-  #- job_name: 'flask_app'
-  #  scrape_interval: 5s
-  #  static_configs:
-  #    - targets: ['localhost:8000']
+  - job_name: 'flask_app'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:8000']
 
   - job_name: 'cloudwatch_exporter'
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9106']
-
-  - job_name: 'prom_ptyhon_app'
-    static_configs:
-      - targets: ['localhost:8001']
 
   - job_name: 'consul_exporter'
     scrape_interval: 5s
