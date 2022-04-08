@@ -51,3 +51,22 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9107']
+
+  - job_name: 'consul'
+    consul_sd_configs:
+      - server:   '127.0.0.1:8500'
+
+    relabel_configs:
+    - source_labels: ['__meta_consul_service']
+      regex:         '(.*)'
+      target_label:  'job'
+      replacement:   '$1'
+    - source_labels: ['__meta_consul_node']
+      regex:         '(.*)'
+      target_label:  'instance'
+      replacement:   '$1'
+    - source_labels: ['__meta_consul_tags']
+      regex:         ',(dev|production|canary),'
+      target_label:  'group'
+      replacement:   '$1'
+
