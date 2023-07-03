@@ -19,3 +19,9 @@ export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,compon
 kubectl --namespace default port-forward $POD_NAME 9090 &
 socat TCP4-LISTEN:9091,fork TCP4:localhost:9090 &
 ```
+
+## Reset Container Prometheus
+
+```
+kubectl exec -n monitoring prometheus-prometheus-kube-prometheus-prometheus-0 -c prometheus -- sh -c 'kill -SIGHUP 1'
+```
